@@ -215,9 +215,12 @@ class Sudoku():
         while changes > 0:
             changes = self.preFillBoard(self.board)
         self.backtrackFillBoard(self.board)
-        time.sleep(20)
-        self.chromeDriver.close()
         self.printBoard()
+        time.sleep(2)
+        self.chromeDriver.find_element_by_xpath('/html/body/table/tbody/tr/td[3]/table/tbody/tr[2]/td/form/p[4]/input[1]').click()
+
+        time.sleep(10)
+        self.chromeDriver.close()
         return
 if __name__ == "__main__":
     # initialize the board
